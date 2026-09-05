@@ -1,122 +1,70 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import "./App.css";
+
+const GithubGraph = ({ username }: { username: string }) => {
+  return (
+    <div className="flex flex-col items-center p-4 rounded-xl bg-slate-900 border border-slate-800">
+      <img
+        src={`https://ghchart.rshah.org/${username}`}
+        alt={`${username}'s GitHub Contribution Chart`}
+        className="w-full max-w-2xl h-auto filter invert-0 dark:invert-0"
+        loading="lazy"
+      />
+    </div>
+  );
+};
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+        <div>
+          <h1>Portfolio</h1>
         </div>
         <div>
-          <h1>Get started</h1>
+          <h2>[pic] Corbin Duncan</h2>
+          <p>Slogan or something.</p>
+        </div>
+        {/* row objects with info on current role, location, gmail, linkedin, and github */}
+        <div>
+          <h3>About</h3>
+
+          <p>Welcome to my portfolio! </p>
+
           <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+            Fullstack Software Engineer working to buy back time for busy
+            people.{" "}
+          </p>
+
+          <p>
+            As a developer, I love to stay ahead of the curve with new tools and
+            workflows while keeping a sharp understanding of their low-level
+            impacts.{" "}
+          </p>
+
+          <p>
+            Outside of work, I enjoy game development, music, and building
+            things with my hands, anything that gives me an outlet.{" "}
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div>
+          <GithubGraph username="cpduncan" />
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        {/* row entries with projects and dropdowns for more info. Add badges of stack for each proj and hyperlink to proj in title */}
+        <div>
+          <h3>Projects</h3>
+        </div>
+        {/* selection of specialised frameworks, stack, and language skills as badges. no carousel.  */}
+        <div>
+          <h3>Skills</h3>
+        </div>
+        {/* professional exerience made same way as the projects section */}
+        <div>
+          <h3>Professional Experience</h3>
         </div>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
