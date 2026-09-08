@@ -44,7 +44,7 @@ function App() {
 
           <p>
             Outside of work, I enjoy game development, music, and building
-            things with my hands, anything that gives me an outlet.{" "}
+            things with my hands. Anything that gives me an outlet!{" "}
           </p>
         </div>
         <div>
