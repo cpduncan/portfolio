@@ -1,4 +1,5 @@
 import "./App.css";
+import { Button, CloseButton, Drawer, Portal } from "@chakra-ui/react";
 
 const GithubGraph = ({ username }: { username: string }) => {
   return (
@@ -13,8 +14,42 @@ const GithubGraph = ({ username }: { username: string }) => {
   );
 };
 
-function App() {
+const Demo = () => {
+  return (
+    <Drawer.Root>
+      <Drawer.Trigger asChild>
+        <Button variant="outline" size="sm">
+          Open Drawer
+        </Button>
+      </Drawer.Trigger>
+      <Portal>
+        <Drawer.Backdrop />
+        <Drawer.Positioner padding="4">
+          <Drawer.Content rounded="md">
+            <Drawer.Header>
+              <Drawer.Title>Drawer Title</Drawer.Title>
+            </Drawer.Header>
+            <Drawer.Body>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </Drawer.Body>
+            <Drawer.Footer>
+              <Button variant="outline">Cancel</Button>
+              <Button>Save</Button>
+            </Drawer.Footer>
+            <Drawer.CloseTrigger asChild>
+              <CloseButton size="sm" />
+            </Drawer.CloseTrigger>
+          </Drawer.Content>
+        </Drawer.Positioner>
+      </Portal>
+    </Drawer.Root>
+  );
+};
 
+function App() {
   return (
     <>
       <section id="center">
@@ -46,6 +81,9 @@ function App() {
             Outside of work, I enjoy game development, music, and building
             things with my hands. Anything that gives me an outlet!{" "}
           </p>
+        </div>
+        <div>
+          <Demo />
         </div>
         <div>
           <GithubGraph username="cpduncan" />
