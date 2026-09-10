@@ -1,6 +1,9 @@
 import "./App.css";
 import { Button, CloseButton, Drawer, Portal } from "@chakra-ui/react";
 
+// images
+import pfp from './assets/pfp.png'
+
 const GithubGraph = ({ username }: { username: string }) => {
   return (
     <div className="flex flex-col items-center p-4 rounded-xl bg-slate-900 border border-slate-800">
@@ -14,7 +17,7 @@ const GithubGraph = ({ username }: { username: string }) => {
   );
 };
 
-const Demo = () => {
+const DrawerDemo = () => {
   return (
     <Drawer.Root>
       <Drawer.Trigger asChild>
@@ -49,6 +52,23 @@ const Demo = () => {
   );
 };
 
+const Intro = () => {
+  return(
+    <div className="horizontal-flex">
+
+      <div>
+        <img src={pfp} draggable="false" className="no-flex-image" alt="pfp" width='100px' object-fit='contain'/>
+      </div>
+
+      <div className="vertical-flex">
+        <h2>Corbin Duncan</h2>
+        <p>Slogan or something.</p>
+      </div>
+
+    </div>
+  );
+}
+
 function App() {
   return (
     <>
@@ -56,13 +76,11 @@ function App() {
         <div>
           <h1>Portfolio</h1>
         </div>
+        
+        <Intro />
+
         <div>
-          <h2>[pic] Corbin Duncan</h2>
-          <p>Slogan or something.</p>
-        </div>
-        {/* row objects with info on current role, location, gmail, linkedin, and github */}
-        <div>
-          <h3>About</h3>
+          <h2>About</h2>
 
           <p>Welcome to my portfolio! </p>
 
@@ -82,12 +100,11 @@ function App() {
             things with my hands. Anything that gives me an outlet!{" "}
           </p>
         </div>
-        <div>
-          <Demo />
-        </div>
-        <div>
-          <GithubGraph username="cpduncan" />
-        </div>
+
+        <DrawerDemo />
+
+        <GithubGraph username="cpduncan" />
+
         {/* row entries with projects and dropdowns for more info. Add badges of stack for each proj and hyperlink to proj in title */}
         <div>
           <h3>Projects</h3>
